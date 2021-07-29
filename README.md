@@ -23,7 +23,7 @@
 - [Demo](#--demo)
 - [Technologies](#--technologies)
 - [Key Concepts](#--key-concepts)
-- [Author](#--auther)
+- [Author](#--author)
 
 
 <h1></h1>
