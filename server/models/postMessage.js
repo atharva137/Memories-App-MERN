@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 
+
+// creating post model and specifying its contents
+
 const postSchema = mongoose.Schema({
     title: String,
     message: String,
@@ -14,6 +17,8 @@ const postSchema = mongoose.Schema({
         default: new Date(),
     },
 })
+
+// setting up Post Message collection on DB
 
 var PostMessage = mongoose.model('PostMessage', postSchema);
 
