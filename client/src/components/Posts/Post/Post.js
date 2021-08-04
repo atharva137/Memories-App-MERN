@@ -1,3 +1,4 @@
+// import librairies
 import React, { useState } from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
@@ -7,8 +8,9 @@ import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
-
+// import actions
 import { likePost, deletePost } from '../../../actions/posts';
+// import styles
 import useStyles from './styles';
 
 const Post = ({ post, setCurrentId }) => {
@@ -20,7 +22,7 @@ const Post = ({ post, setCurrentId }) => {
 
   const userId = user?.result.googleId || user?.result?._id;
   const hasLikedPost = post.likes.find((like) => like === userId);
-
+  // handling like button
   const handleLike = async () => {
     dispatch(likePost(post._id));
 
@@ -33,9 +35,9 @@ const Post = ({ post, setCurrentId }) => {
 
   const Likes = () => {
     if (likes.length > 0) {
-      return likes.find((like) => like === userId)
+      return likes.find((like) => like === userId) // checking user Id for one like per person
         ? (
-          <><ThumbUpAltIcon fontSize="small" />&nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}` }</>
+          <><ThumbUpAltIcon fontSize="small" />&nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}`}</>
         ) : (
           <><ThumbUpAltOutlined fontSize="small" />&nbsp;{likes.length} {likes.length === 1 ? 'Like' : 'Likes'}</>
         );
@@ -49,7 +51,7 @@ const Post = ({ post, setCurrentId }) => {
 
     history.push(`/posts/${post._id}`);
   };
-
+  // JSX code
   return (
     <Card className={classes.card} raised elevation={6}>
       <ButtonBase
@@ -64,18 +66,18 @@ const Post = ({ post, setCurrentId }) => {
           <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
         </div>
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
-        <div className={classes.overlay2} name="edit">
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrentId(post._id);
-            }}
-            style={{ color: 'white' }}
-            size="small"
-          >
-            <MoreHorizIcon fontSize="default" />
-          </Button>
-        </div>
+          <div className={classes.overlay2} name="edit">
+            <Button
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentId(post._id);
+              }}
+              style={{ color: 'white' }}
+              size="small"
+            >
+              <MoreHorizIcon fontSize="default" />
+            </Button>
+          </div>
         )}
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>

@@ -1,7 +1,7 @@
 import axios from 'axios';
-//for local 
-// http://localhost:5000
+//for local -> http://localhost:5000
 
+// creating axio calls to backend API 
 const API = axios.create({ baseURL: 'https://memories-hao.herokuapp.com' });
 
 API.interceptors.request.use((req) => {
@@ -11,7 +11,7 @@ API.interceptors.request.use((req) => {
 
   return req;
 });
-
+// fetching data from backend 
 export const fetchPost = (id) => API.get(`/posts/${id}`);
 export const fetchPosts = (page) => API.get(`/posts?page=${page}`);
 export const fetchPostsByCreator = (name) => API.get(`/posts/creator?name=${name}`);

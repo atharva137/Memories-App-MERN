@@ -1,12 +1,16 @@
+// import librairies
 import React, { useState, useEffect } from 'react';
 import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
+// import images
 import memoriesLogo from '../../images/memoriesLogo.png';
 import memoriesText from '../../images/memoriesText.png';
+// import actions
 import * as actionType from '../../constants/actionTypes';
+// import styles
 import useStyles from './styles';
 
 const Navbar = () => {
@@ -16,6 +20,7 @@ const Navbar = () => {
   const history = useHistory();
   const classes = useStyles();
 
+  // logout 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
 
@@ -35,7 +40,7 @@ const Navbar = () => {
     setUser(JSON.parse(localStorage.getItem('profile')));
     // eslint-disable-next-line 
   }, [location]);
-
+  // JSX code
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>

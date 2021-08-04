@@ -1,3 +1,4 @@
+// import action from actypes
 import * as actionType from '../constants/actionTypes';
 
 const authReducer = (state = { authData: null }, action) => {

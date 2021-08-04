@@ -1,3 +1,4 @@
+// import librairies
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
@@ -5,7 +6,9 @@ import FileBase from 'react-file-base64';
 import { useHistory } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
 
+// import posts
 import { createPost, updatePost } from '../../actions/posts';
+//import styles
 import useStyles from './styles';
 
 const Form = ({ currentId, setCurrentId }) => {
@@ -13,6 +16,7 @@ const Form = ({ currentId, setCurrentId }) => {
   const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
   const dispatch = useDispatch();
   const classes = useStyles();
+  // using  local storage for user Id 
   const user = JSON.parse(localStorage.getItem('profile'));
   const history = useHistory();
 
@@ -27,6 +31,7 @@ const Form = ({ currentId, setCurrentId }) => {
     // eslint-disable-next-line 
   }, [post]);
 
+  // dispatching filled posts detail by user
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,11 +44,14 @@ const Form = ({ currentId, setCurrentId }) => {
     }
   };
 
+  //  checking if user is logged in or not 
   if (!user?.result?.name) {
     return (
       <Paper className={classes.paper} elevation={6}>
         <Typography variant="h6" align="center">
           Please Sign In to create your own memories and like other's memories.
+          <br></br>
+           If having issue in Signing in please refresh the page
         </Typography>
       </Paper>
     );
@@ -57,6 +65,7 @@ const Form = ({ currentId, setCurrentId }) => {
     setPostData({ ...postData, tags: postData.tags.filter((tag) => tag !== chipToDelete) });
   };
 
+  // JSX code
   return (
     <Paper className={classes.paper} elevation={6}>
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>

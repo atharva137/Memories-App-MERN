@@ -1,7 +1,9 @@
+// import libraries 
 import React from 'react';
 import { Container } from '@material-ui/core';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
+// import components
 import PostDetails from './components/PostDetails/PostDetails';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
@@ -11,6 +13,7 @@ import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
 
 
 const App = () => {
+  // getting profile info
   const user = JSON.parse(localStorage.getItem('profile'));
 
   return (

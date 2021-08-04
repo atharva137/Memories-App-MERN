@@ -1,13 +1,17 @@
+// import librairies
 import React, { useState } from 'react';
 import { Container, Grow, Grid, AppBar, TextField, Button, Paper } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
-
+// import actions 
 import { getPostsBySearch } from '../../actions/posts';
+// import components
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import Pagination from '../Pagination';
+
+//import styles
 import useStyles from './styles';
 
 function useQuery() {
@@ -25,7 +29,7 @@ const Home = () => {
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
   const history = useHistory();
-
+  
   const searchPost = () => {
     if (search.trim() || tags) {
       dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
@@ -44,7 +48,8 @@ const Home = () => {
   const handleAddChip = (tag) => setTags([...tags, tag]);
 
   const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
-
+ 
+  // JSX code 
   return (
     <Grow in>
       <Container maxWidth="xl">

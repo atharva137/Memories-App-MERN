@@ -1,11 +1,15 @@
+// import librairies
 import React, { useEffect } from 'react';
 import { Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory, Link } from 'react-router-dom';
 
+// import action
 import { getPost, getPostsBySearch } from '../../actions/posts';
+// import component
 import CommentSection from './CommentSection';
+// import styles
 import useStyles from './styles';
 
 const Post = () => {
@@ -29,7 +33,7 @@ const Post = () => {
   }, [post]);
 
   if (!post) return null;
-
+// opening post
   const openPost = (_id) => history.push(`/posts/${_id}`);
 
   if (isLoading) {
@@ -41,7 +45,7 @@ const Post = () => {
   }
 
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
-
+// JSX code
   return (
     <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
       <div className={classes.card}>
