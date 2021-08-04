@@ -107,6 +107,19 @@ $ npm start (for React client side development)
 
 ## 👨‍💻 &nbsp; Demo
 
+<p align="center">
+<p>Screenshoots of some main features</p>
+<img src=./demo_images/desktop.png>
+<img src="./demo_images/iphone1.png" width="200" height="356">
+&emsp;
+<img src="./demo_images/iphone2.png" width="200" height="356">
+<br/>
+<img src = "./demo_images/ipad.png" width="300" height="402">&emsp;
+ <img alt="tablet mockup 2" src="./demo_images/ipad2.png" width="300" height="402" margin="5px"/> 
+
+ </p>
+  
+
 <h1></h1>
 
 ## 💡 &nbsp; Key Concepts
