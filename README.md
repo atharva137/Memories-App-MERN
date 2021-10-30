@@ -6,8 +6,7 @@
 
 > Built with MERN stack (MongoDB, Express, React, and Node).
 > Memories App, where you can post interesting events that happened in your lives
-> This project is created as a sample project for MLH fellowship fall 2021 (Spet 20 - Dec 13)
-> For more details click [here](https://fellowship.mlh.io/)
+
 
 
 
