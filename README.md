@@ -160,7 +160,7 @@ $ npm start (for React client side development)
 
 # Author
 
-👤 &nbsp; **Atharva Yawalkar**
+👤 &nbsp; **Sameer Faridi**
 
 - Github :     [@sameerkali](https://github.com/sameerkali)
 - Linkedin :  https://www.linkedin.com/in/sameer-faridi-12830a16b/
