@@ -162,6 +162,6 @@ $ npm start (for React client side development)
 
 👤 &nbsp; **Atharva Yawalkar**
 
-- Github :     [@atharva137](https://github.com/sameerkali)
+- Github :     [@sameerkali](https://github.com/sameerkali)
 - Linkedin :  https://www.linkedin.com/in/sameer-faridi-12830a16b/
 - Email :      [s.faridi007@gmail.com](mailto:s.faridi007@gmail.com)
